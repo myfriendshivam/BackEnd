@@ -12,10 +12,9 @@
 
 ## Example of Different Origin
 
-``` http://localhost:3000
+`http://localhost:3000`
 
-    http://localhost:5173
-```
+`http://localhost:5173`
 
 Even though both are localhost, the port numbers are different, so it is treated as a different origin.
 
@@ -24,13 +23,17 @@ Even though both are localhost, the port numbers are different, so it is treated
 - Whitelist the frontend URL in the backend.
   Example:
 
-```origin: "http://localhost:3000" 
+```bash 
+origin: "http://localhost:3000" 
+
 ```
 
 - Use the CORS npm package in the backend:
 
-```const cors = require("cors");
+```bash 
+const cors = require("cors");
 app.use(cors());
+
 ```
 
 - In Vite, you can use a proxy configuration to avoid CORS issues during development.
@@ -43,7 +46,9 @@ app.use(cors());
 
 - Using middleware in `server.js`:
 
-``` app.use(express.static('dist'));
+```bash
+app.use(express.static('dist'));
+
 ```
 
 - This method only serves static files.
