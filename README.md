@@ -13,3 +13,9 @@
 <img width="1366" height="850" alt="context api" src="./assets/models.webp" />
 
 Data modelling -> what data points do i have to collect from the user
+
+## Youtube Backend
+
+dependency ->
+- npm i -D nodemon
+- npm i dotenv
