@@ -17,10 +17,17 @@ Data modelling -> what data points do i have to collect from the user
 ## Youtube Backend
 
 dependency ->
-- npm i -D nodemon
 - npm i dotenv
 - npm i express
-- npm i mongoose
 - npm i -D prettier
 
+### Database connection
+- npm i mongoose
+- npm i -D nodemon
 
+- We use mongoDb Atlas to connect our database to the backend.
+
+
+
+- npm i cors
+- npm i cookie-parser
