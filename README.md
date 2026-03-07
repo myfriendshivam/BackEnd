@@ -19,3 +19,8 @@ Data modelling -> what data points do i have to collect from the user
 dependency ->
 - npm i -D nodemon
 - npm i dotenv
+- npm i express
+- npm i mongoose
+- npm i -D prettier
+
+
