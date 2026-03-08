@@ -11,6 +11,7 @@ app.use(cors({
 
 app.use(express.json({limit: "16kb"}))
 
+// data from URL
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 
 // file folder store in public

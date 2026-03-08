@@ -31,3 +31,6 @@ dependency ->
 
 - npm i cors
 - npm i cookie-parser
+- npm i mongoose-aggregate-paginate-v2
+- npm i bcrypt // password hashing
+- npm i jsonwebtoken // for authentication
