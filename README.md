@@ -34,3 +34,9 @@ dependency ->
 - npm i mongoose-aggregate-paginate-v2
 - npm i bcrypt // password hashing
 - npm i jsonwebtoken // for authentication
+
+cloudinary -> for image upload
+- npm i cludinary
+
+- npm i multer 
+- express-fileupload and multer but we use multer for image upload.
