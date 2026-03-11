@@ -18,7 +18,17 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
 
  //its work is just that i should be able to access cookies in the user browser from my server and perform the curd operation
- app.use(cookieParser())
+app.use(cookieParser())
+
+//routes import
+
+import userRouter from "./routes/user.routes.js"
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
+// http://localhost:8000/api/v1/users/register
+// http://localhost:8000/users/login
 
 export { app }
 

@@ -44,14 +44,14 @@ cloudinary -> for image upload
 ## HTTP {Hyper Text Transfer Protocol}
 
 url, uri, urn
-what are HTTP headers
-metadata --> key-value sent along with request & response
-use of headers -> caching, authentication, manage state
-    X-prefix -----> 2012 (X- deprecated)
-    - Request Headers -> from Client
-    - Response Headers -> from Server
-    - Representation Headers -> encoding/ compression (gzip file, graph charts)
-    - Payload Headers -> data
+- what are HTTP headers
+- metadata --> key-value sent along with request & response
+- use of headers -> caching, authentication, manage state
+`X-prefix -----> 2012 (X- deprecated)`
+- Request Headers -> from Client
+- Response Headers -> from Server
+- Representation Headers -> encoding/ compression (gzip file, graph charts)
+- Payload Headers -> data
 
 ### Most Common Headers
 - Accept: application/json
@@ -88,11 +88,11 @@ use of headers -> caching, authentication, manage state
 - 4xx: Client error
 - 5xx: Server error
 
-100 Continue            400 Bad request
-102 Prcessing           401 Unauthorized 
-200 OK                  402 Payment Required
-201 created             404 Not found
-202 accepted            500 Internal Server Error
-307 temporary redirect  504 Gate way TimeOut
-308npermanent redirect
+100 Continue <br>           400 Bad request
+102 Prcessing <br>          401 Unauthorized 
+200 OK         <br>         402 Payment Required
+201 created     <br>        404 Not found
+202 accepted    <br>        500 Internal Server Error
+307 temporary redirect <br> 504 Gate way TimeOut
+308npermanent redirect <br>
 
