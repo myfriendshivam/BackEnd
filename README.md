@@ -94,5 +94,6 @@ url, uri, urn
 201 created     <br>        404 Not found
 202 accepted    <br>        500 Internal Server Error
 307 temporary redirect <br> 504 Gate way TimeOut
-308npermanent redirect <br>
+308 permanent redirect <br>
 
+- create user router and conroller
