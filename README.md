@@ -97,3 +97,9 @@ url, uri, urn
 308 permanent redirect <br>
 
 - create user router and conroller
+- Access Token - usually short lived (15 mins) for authentication
+- Refresh Token - usually long lived (7 days) hit the end point to get refresh token and match with the database refresh token and then generate new access token or send to the user.
+
+- designing login controllers
+- create auth middleware to protect the routes
+- designing logout controllers
