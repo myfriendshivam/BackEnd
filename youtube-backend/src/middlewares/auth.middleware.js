@@ -1,11 +1,15 @@
-import { ApiError } from "../utils/ApiError";
-import { asyncHandler } from "../utils/asyncHandler";
+import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
-import { User } from "../models/user.models";
+import { User } from "../models/user.models.js";
 
-export const verifyJWT = asyncHandler(async (req, _, next) => {
+export const verifyJWT = asyncHandler(async (req, res, next) => {
     try {
-        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer", "")
+        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
+        // console.log("Cookies:", req.cookies);
+        // console.log("Authorization Header:", req.header("Authorization"));
+        // console.log("Token:", token);
+
         if (!token) {
             throw new ApiError(401, "Unauthorized request")
         }
@@ -19,7 +23,7 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
         }
 
         req.user = user;
-        next()
+        next();
     } catch (error) {
         throw new ApiError(401, error?.message || "Invalid access Token")
     }

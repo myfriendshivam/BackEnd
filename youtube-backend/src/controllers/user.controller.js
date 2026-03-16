@@ -1,14 +1,14 @@
 import {asyncHandler} from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
-import {User, generateAccessToken, generateRefreshToken} from "../models/user.models.js";
+import {User} from "../models/user.models.js";
 import {uploadOnCloudinary} from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const generateAccessAndRefreshTokens = async(userId)=> {
     try {
         const user = await User.findById(userId)
-        const accessToken = user.generateAccessToken()
-        const refreshToken = user.generateRefreshToken()
+        const accessToken = user.generateAccessToken();
+        const refreshToken = user.generateRefreshToken();
 
         user.refreshToken = refreshToken
         await user.save({ validateBeforeSave: false })
@@ -110,9 +110,15 @@ const loginUser =  asyncHandler( async (req, res) => {
     // response
 
     const {email, username, password} = req.body
-    if(!username || !email){
+    // console.log(email);
+    
+    if(!username && !email){
         throw new ApiError(400, "username or password is required")
     }
+    // Here is an alternative of above code based on logic discussion
+    // if(!(username || email)){
+    //     throw new ApiError(400, "username or password is required")
+    // }
 
     const user = await User.findOne({
         $or: [{username}, {email}]
@@ -127,18 +133,17 @@ const loginUser =  asyncHandler( async (req, res) => {
     }
 
     const {accessToken, refreshToken} = await generateAccessAndRefreshTokens(user._id)
-
     const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
 
     // modified by only server
     const options = {
         httpOnly: true,
-        secure: true
+        secure: false // in localhost secure is false but in production it is true
     }
 
     return res
     .status(200)
-    .cookie("accessToken", accessToken, options)
+    .cookie("accessToken", accessToken,  options)
     .cookie("refreshToken", refreshToken, options)
     .json(
         new ApiResponse(
@@ -162,8 +167,8 @@ const logoutUser = asyncHandler( async (req, res) => {
     await User.findByIdAndUpdate(
         req.user._id,
         {
-            $set: {
-                refreshToken: undefined
+            $unset: {
+                refreshToken: 1 // this is removes the field from document
             }
         },
         {
@@ -179,7 +184,7 @@ const logoutUser = asyncHandler( async (req, res) => {
     return res
     .status(200)
     .clearCookie("accessToken", options)
-    .clearCookie("refreshToken", refreshToken, options)
+    .clearCookie("refreshToken", options)
     .json(
         new ApiResponse(200, {}, "User logged Out")
     )
