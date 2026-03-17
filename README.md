@@ -98,8 +98,10 @@ url, uri, urn
 
 - create user router and conroller
 - Access Token - usually short lived (15 mins) for authentication
-- Refresh Token - usually long lived (7 days) hit the end point to get refresh token and match with the database refresh token and then generate new access token or send to the user.
+- Refresh Token - usually long lived (7 days) hit the end point to get refresh token and match with the database refresh token and then generate new access token or send to the user.( session storage )
 
 - designing login controllers
 - create auth middleware to protect the routes
 - designing logout controllers
+
+- create end point for user to refreshAccessToken
