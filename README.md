@@ -105,3 +105,12 @@ url, uri, urn
 - designing logout controllers
 
 - create end point for user to refreshAccessToken
+- create end point for user to update password
+- create end point for user to update profile
+- create end point for user to delete profile
+- create end point for user to get profile
+- create end point for user to get all users(admin)
+
+- Under standing the subscription model
+
+- aggregation pipeline in monogoDB
