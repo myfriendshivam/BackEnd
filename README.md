@@ -114,3 +114,6 @@ url, uri, urn
 - Under standing the subscription model
 
 - aggregation pipeline in monogoDB
+
+- whatch history of youtube backend developement
+
