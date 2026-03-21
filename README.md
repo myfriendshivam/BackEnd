@@ -117,3 +117,5 @@ url, uri, urn
 
 - whatch history of youtube backend developement
 
+- add all routes for differnet controllers
+
