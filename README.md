@@ -119,3 +119,6 @@ url, uri, urn
 
 - add all routes for differnet controllers
 
+- add comment, like, playlist, and tweet models
+
+- assignment complete all files properly
